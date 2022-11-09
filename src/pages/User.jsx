@@ -3,6 +3,7 @@ import facade from "../utils/apiFacade.js";
 
 function User(props) {
     const [userInfo, setUserInfo] = useState({})
+
     useEffect(  () => {
         facade.fetchData().then((res) => setUserInfo(res))
     },[])

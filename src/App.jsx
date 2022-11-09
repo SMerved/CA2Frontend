@@ -7,6 +7,7 @@ import Header from "./components/Header.jsx";
 import User from "./pages/User.jsx";
 import Admin from "./pages/Admin.jsx";
 import Jokes from "./pages/Jokes.jsx";
+import Exchange from "./pages/Exchange.jsx";
 
 
 function App(props) {
@@ -30,6 +31,7 @@ function App(props) {
                 <Route path="search" element={<Search/>}/>
                 <Route path="contact" element={<Contact address={obj}/>}/>
                 <Route path="jokes" element={<Jokes/>}/>
+                <Route path="exchange" element={<Exchange/>}/>
                 <Route path="user" element={<User/>}/>
                 <Route path="admin" element={<Admin/>}/>
                 <Route path="*" element={<h1>Page Not Found !!!!</h1>}/>

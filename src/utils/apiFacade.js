@@ -54,6 +54,20 @@ function apiFacade() {
         return fetch(URL + "/api/jokes", options).then(handleHttpErrors);
     }
 
+    const fetchExchange = (to, from, amount) => {
+        const options = makeOptions("GET", false);
+        options.headers["apikey"]="hewou9ykxMpoxZ6CIuUXZtOc8RSDcr1F";
+        return fetch("https://api.apilayer.com/exchangerates_data/convert?to="+to+"&from="+from+"&amount="+amount, options)
+            .then(handleHttpErrors)
+    }
+
+    const fetchCurrencies = () => {
+        const options = makeOptions("GET", false);
+        options.headers["apikey"]="hewou9ykxMpoxZ6CIuUXZtOc8RSDcr1F";
+        return fetch("https://api.apilayer.com/exchangerates_data/symbols", options)
+            .then(handleHttpErrors)
+    }
+
     function makeOptions(method, addToken, body) {
         method = method ? method : 'GET';
         const opts = {
@@ -74,6 +88,8 @@ function apiFacade() {
         return opts;
     }
 
+
+
     return {
         makeOptions,
         setToken,
@@ -83,7 +99,8 @@ function apiFacade() {
         logout,
         fetchData,
         fetchAdminData,
-        fetchJokes
+        fetchJokes,
+        fetchExchange
     }
 }
 

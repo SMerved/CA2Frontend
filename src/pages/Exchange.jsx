@@ -25,6 +25,10 @@ function Exchange(props) {
         facade.fetchExchange(to, from, amount).then((res)=> setConverted(res.result))
     }
 
+    const fetchExchange = () => {
+        facade.fetchCurrencies().then(res=> console.table(Object.values(res.symbols)))
+    }
+
     return (
         <div>
             <form onSubmit={convert}>
@@ -36,6 +40,9 @@ function Exchange(props) {
                 <button type="submit">Convert</button>
             </form>
             <p>{converted} {to}</p>
+            <div>
+                {fetchExchange()}
+            </div>
         </div>
     );
 }

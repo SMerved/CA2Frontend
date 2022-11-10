@@ -100,7 +100,8 @@ function apiFacade() {
         fetchData,
         fetchAdminData,
         fetchJokes,
-        fetchExchange
+        fetchExchange,
+        fetchCurrencies
     }
 }
 
